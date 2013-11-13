@@ -1,4 +1,4 @@
-linkshare.jaeh.at
+links.jaeh.at
 ==
 
 at the moment its a simple as can be linkshare,
