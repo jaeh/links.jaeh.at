@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  form(action='/share', method='post')
+    fieldset
+      legend 
+        | add links to our collection: 
+        | (blank/unchanged fields will be ignored)
+
+      if errors
+        for error in errors
+          span.error= error
+
+      div.fields
+        label(for='link[url]') url:
+        input(type='text', value='link', name='link[url]', data-default='link')
+
+      div.fields
+        label(for='link[text]') text:
+        input(type='text', value='text', name='link[text]', data-default='text')
+
+      div.fields
+        label(for='link[desc]') description:
+        textarea(name='link[desc]', data-default='description') description
+
+      div.fields
+        label(for='link[uploader]') uploader:
+        input(type='text', value='uploader', name='link[uploader]', data-default='uploader')
+
+      if categories
+        div.fields
+          label(for='link[category]') category:
+          select(type='option', name='link[category]')
+            for cat in categories  
+              option(value=cat.name)= cat.name
+
+      div
+        input(type='submit', value='submit link')
+
+
+block aside
+  form(action='/share', method='post')
+    fieldset
+      legend add a new category:
+
+      input(type='text', value='name', name='category[name]', data-default='name')
+
+      input(type='submit', value='add category')
+

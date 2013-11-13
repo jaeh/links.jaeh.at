@@ -1,0 +1,26 @@
+doctype 5
+html
+  head
+    title linkshare
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    div#wrapper
+      header.main
+        div#logo linkshare
+        nav
+          ul
+            li
+              a(href='/') share
+            li
+              a(href='/links') links
+
+      div#content
+        block content
+
+      aside.main
+        block aside
+
+      footer.main 
+        a(href='https://metalab.at') created @ metalab.at
+
+    script(src='/js/main.js')
